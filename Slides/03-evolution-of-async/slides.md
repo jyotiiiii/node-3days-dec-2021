@@ -24,15 +24,6 @@ drawings:
 
 ---
 
-# Morning 👋🏻
-
-While you get comfortable, can you:
-
-- Pull the latest changes from our repo 
-- Think about your biggest takeaway/question from Monday
-
----
-
 By the end of this section, you should be able to:
 - Understand native asynchronous primitives.
 - Understand serial and parallel control flow with callbacks.
@@ -575,4 +566,4 @@ Call them in such a way so that `C` then `B` then `A` is printed out.
 2. In the labs folder, there is a file `serial.js`.
 Call the functions in such a way such that `A` then `B` then `C` is printed out.
 
-3. In `lab.js` use the `api.fetch()` function to complete the two exercises. How many different ways can you do it in?
+3. In `lab.js` use the `api.fetch()` function to complete the two exercises. How many different ways can you do it in? Explore some parallel and series approaches.

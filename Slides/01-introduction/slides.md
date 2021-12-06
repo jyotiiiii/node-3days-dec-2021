@@ -21,7 +21,7 @@ drawings:
 
 Kevin Cunningham
 
-Grab repo at https://github.com/doingandlearning/NodeJS-November
+Grab repo at https://github.com/doingandlearning/node-3days-dec-2021
 
 ---
 
@@ -80,6 +80,8 @@ Learn more: https://sli.dev/guide/syntax#embedded-styles
 ---
 
 # What is Node.js?
+
+<p></p>
 
 ![The Event Loop](https://i.stack.imgur.com/Lbs9z.png)
 

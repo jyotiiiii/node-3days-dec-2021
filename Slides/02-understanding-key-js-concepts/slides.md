@@ -25,10 +25,11 @@ drawings:
 ---
 
 # Aims
-  - Arrow functions
-	- Events and Callbacks
-	- Describe the prototypical nature of all JavaScript-based inheritance
-	- Explain the role of closure scope in state management
+
+- Arrow functions
+- Events and Callbacks
+- Describe the prototypical nature of all JavaScript-based inheritance
+- Explain the role of closure scope in state management
 
 ---
 
@@ -415,5 +416,5 @@ outerFunction()
 
 2. In `exercises2.js`, you need to implement an event emitter and use it. It should be able to handle any number of arguments.
 
-Extra: Open the file `exercises2.js`. Your job is to create a prototype chain from leopard -> lynx -> cat. Decide which type of inheritance you want to try to implement (remember the three are functional, constructor, class syntax). If you have time, try another implementation.
+Extra: Open the file `extra.js`. Your job is to create a prototype chain from leopard -> lynx -> cat. Decide which type of inheritance you want to try to implement (remember the three are functional, constructor, class syntax). If you have time, try another implementation.
 
