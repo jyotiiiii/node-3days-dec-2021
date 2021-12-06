@@ -21,11 +21,11 @@
 
 const outerFunction = () => {
   console.log("outer", this);
-  const test = "test";
-  //
+
   const innerFunction = () => {
     console.log("inner", this);
   };
+
   innerFunction();
 };
 

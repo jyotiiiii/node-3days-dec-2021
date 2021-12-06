@@ -1,7 +1,8 @@
 const http = require("http");
+const querystring = require("querystring");
 const port = 3000;
 
-let userStore = [
+let bookStore = [
   {
     id: 1,
     title: "You Don't Know JS",
@@ -21,7 +22,23 @@ const app = http.createServer();
 // -
 
 app.on("request", (request, response) => {
-  response.write("<h1>Hello</h1>");
+  // GET
+
+  // POST
+  if (request.method === "POST") {
+    let body = [];
+    request.on("data", (bodyData) => body.push(bodyData));
+    request.on("end", () => {
+      body = JSON.parse(Buffer.concat(body).toString());
+      console.log(body);
+    });
+  }
+
+  // DELETE
+
+  // PATCH
+
+  response.write("<h1>Goodbye</h1>");
   response.end();
 });
 

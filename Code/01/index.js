@@ -11,9 +11,9 @@ arguments.forEach(arg => {
 })
 
 if(flags.includes("--add")) {
-console.log(args.reduce((a,c) => a+ parseInt(c), 0))
+  console.log(args.reduce((a,c) => a + parseInt(c), 0))
 } else {
-  console.log(args.reduce((a,c) => a* parseInt(c), 1))
+  console.log(args.reduce((a,c) => a * parseInt(c), 1))
 }
 
 
