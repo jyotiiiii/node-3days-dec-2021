@@ -2,7 +2,7 @@
 
 - Introduction
 - Node.js Overview
-- Core JS  Concepts
+- Core JS Concepts
 - Evolution of Async in Node
 - Node.js Module System
 
