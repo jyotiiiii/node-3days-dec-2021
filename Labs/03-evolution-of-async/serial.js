@@ -5,20 +5,50 @@ const print = (err, contents) => {
   else console.log(contents);
 };
 
-const opA = (cb) => {
-  setTimeout(() => {
-    cb(null, "A");
-  }, 500);
+function wait(ms, value) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(value), ms);
+  });
+}
+
+const opA = async (cb) => {
+  // setTimeout(() => {
+  //   cb(null, "A");
+  // }, 500);
+  await wait(500, cb(null, "A"));
 };
 
-const opB = (cb) => {
-  setTimeout(() => {
-    cb(null, "B");
-  }, 250);
+const opB = async (cb) => {
+  // setTimeout(() => {
+  //   cb(null, "B");
+  // }, 250);
+  await wait(250, cb(null, "B"));
 };
 
-const opC = (cb) => {
-  setTimeout(() => {
-    cb(null, "C");
-  }, 125);
+const opC = async (cb) => {
+  // setTimeout(() => {
+  //   cb(null, "C");
+  // }, 125);
+  await wait(125, cb(null, "C"));
 };
+
+// opA((err, data) => {
+//   if (err) console.log(err);
+//   else print(data);
+//   opB((err, data) => {
+//     if (err) console.log(err);
+//     else print(data);
+//     opC((err, data) => {
+//       if (err) console.log(err);
+//       else print(data);
+//     });
+//   });
+// });
+
+async function run() {
+  await opA(print);
+  await opB(print);
+  await opC(print);
+}
+
+run();

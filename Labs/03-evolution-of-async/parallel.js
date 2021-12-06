@@ -20,3 +20,7 @@ const opC = (cb) => {
     cb(null, "C");
   }, 125);
 };
+
+opA(print);
+opB(print);
+opC(print);
