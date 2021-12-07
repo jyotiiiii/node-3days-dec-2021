@@ -102,10 +102,12 @@ test()
 
 # Exercises
 
-1. The labs folder contains an `app.js` file. Start `app.js` with Node in Inspect Mode, but with the application immediately paused on the first line of execution code.
+1. Start `exercise.js` with Node in Inspect Mode, but with the application immediately paused on the first line of execution code.
 
 If this done correctly, then the program should be paused on line 1. Verify this in the Chrome Devtools.
 
 2. Explore setting breakpoints and then querying your API using code and the UI.
 
-3. If you've time, explore what else is available to you in the debugger.
+3. Open `exercise2.js` and work through the TODOs. Create errors and then use them. 
+
+4. If you've time, explore what else is available to you in the debugger. Also, explore other ways to throw/catch errors.
