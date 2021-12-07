@@ -23,6 +23,10 @@ const app = http.createServer();
 
 app.on("request", (request, response) => {
   // GET
+  if (request.method === "GET") {
+    // send the whole book object
+    // JSON.stringify()
+  }
 
   // POST
   if (request.method === "POST") {
