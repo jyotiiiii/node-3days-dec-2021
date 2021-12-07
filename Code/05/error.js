@@ -24,8 +24,7 @@ function doTask(amount) {
 async function run() {
   try {
     const result = doTask(2);
-    result();
-    console.log(result);
+    return result;
   } catch (error) {
     if (error instanceof TypeError) {
       // Some action for your developers.
@@ -47,7 +46,9 @@ try {
   console.log(err);
 }
 
-run().catch((err) => console.log(err));
+run()
+  .then((data) => console.log(data))
+  .catch((err) => console.log(err));
 
 async function doSomeWork() {
   try {
