@@ -22,6 +22,7 @@ const app = http.createServer();
 // -
 
 app.on("request", (request, response) => {
+  console.log(request);
   // GET
   if (request.method === "GET") {
     // send the whole book object
