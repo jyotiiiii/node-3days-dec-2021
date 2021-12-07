@@ -23,12 +23,40 @@ drawings:
 # Debugging in Node.js
 
 ---
-  - Learn about errors in Node
-	- Learn how to start a process in inspect mode
-	- Connect to a process in inspect mode in order to debug it
-	- Understand what breakpoints are and how to set them
+
+# Morning 👋🏻
+
+As you arrive, could you:
+
+- Pull the changes from the repo
+- Think of a takeaway (learning, question, wondering) from yesterday to share.
 
 ---
+
+- Learn how to start a process in inspect mode
+- Connect to a process in inspect mode in order to debug it
+- Understand what breakpoints are and how to set them
+- Learn about errors in Node
+
+---
+
+# Starting in Inspect Mode
+
+Consider this code as `app.js`:
+```js 
+function test(n = 99) {
+  if (n === 0) throw Error();
+  test(n-1)
+}
+
+test()
+```
+
+## node --inspect app.js
+## node --inspect-brk app.js
+## chrome://inspect
+
+--- 
 
 # Kinds of Errors
 
@@ -82,23 +110,6 @@ These are mostly for JS API's but you can leverage them if you want.
 
 ---
 
-# Starting in Inspect Mode
-
-Consider this code as `app.js`:
-```js 
-function test(n = 99) {
-  if (n === 0) throw Error();
-  test(n-1)
-}
-
-test()
-```
-
-## node --inspect app.js
-## node --inspect-brk app.js
-## chrome://inspect
-
---- 
 
 # Exercises
 
