@@ -22,59 +22,63 @@ const app = http.createServer();
 // -
 
 app.on("request", (request, response) => {
-  switch (request.method) {
-    case "GET":
-      response.writeHead(200, { "Content-Type": "application/json" });
-      response.write(JSON.stringify(bookStore));
-      response.end();
-      break;
-    case "POST":
-      let body = [];
-      request.on("data", (bodyData) => body.push(bodyData));
-      request.on("end", () => {
-        body = JSON.parse(Buffer.concat(body).toString());
-        body.id = ++id;
-        bookStore.push(body);
-        response.writeHead(200, { "Content-Type": "application/json" });
-        response.write(
-          JSON.stringify({ success: true, message: "Added book." })
-        );
-        response.end();
-      });
-      break;
-
-    case "PATCH":
-      const idPatch = request.url.split("/")[1];
-
-      const tempStore = bookStore.filter((book) => book.id !== idPatch);
-      const bookToUpdate = bookStore.filter((book) => book.id === idPatch)[0];
-      let bodyPatch = [];
-      request.on("data", (bodyData) => bodyPatch.push(bodyData));
-      request.on("end", () => {
-        bodyPatch = JSON.parse(Buffer.concat(bodyPatch).toString());
-        const updatedBook = { ...bookToUpdate, ...bodyPatch };
-        const updatedStore = [updatedBook, ...tempStore];
-        bookStore = updatedStore;
-        response.writeHead(200, { "Content-Type": "application/json" });
-        response.write(
-          JSON.stringify({ success: true, message: "Added book." })
-        );
-        response.end();
-      });
-  }
   // GET
   if (request.method === "GET") {
     // send the whole book object
-    // JSON.stringify()
+    response.writeHead(200, { "Content-Type": "application/json" });
+    response.write(JSON.stringify(bookStore));
+    response.end();
   }
 
   // POST
   if (request.method === "POST") {
+    let body = [];
+    request.on("data", (bodyData) => body.push(bodyData));
+    request.on("end", () => {
+      body = JSON.parse(Buffer.concat(body).toString());
+      body.id = ++id;
+      bookStore.push(body);
+      response.writeHead(200, { "Content-Type": "application/json" });
+      response.write(JSON.stringify({ success: true, message: "Added book." }));
+      response.end();
+    });
   }
 
   // DELETE
+  if (request.method === "DELETE") {
+    const id = request.url.split("/")[1];
+    bookStore = bookStore.filter((book) => book.id !== Number.parseInt(id));
+
+    response.writeHead(200, { "Content-Type": "application/json" });
+    response.write(JSON.stringify(bookStore));
+    response.end();
+  }
 
   // PATCH
+  if (request.method === "PATCH") {
+    const id = request.url.split("/")[1];
+
+    const tempStore = bookStore.filter(
+      (book) => book.id !== Number.parseInt(id)
+    );
+
+    const bookToUpdate = bookStore.filter(
+      (book) => book.id === Number.parseInt(id)
+    )[0];
+
+    let body = [];
+
+    request.on("data", (bodyData) => body.push(bodyData));
+
+    request.on("end", () => {
+      body = Buffer.concat(body).toString();
+      const bookUpdates = JSON.parse(body);
+      const updatedbook = { ...bookToUpdate, ...bookUpdates };
+      bookStore = [...tempStore, updatedbook];
+      response.write("Updated book.");
+      response.end();
+    });
+  }
 });
 
 app.listen(port);
