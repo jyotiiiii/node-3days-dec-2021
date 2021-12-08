@@ -24,7 +24,7 @@ drawings:
 
 ---
 
-# Good morning, good afternoon, good evening! 👋🏻
+# Good morning! 👋🏻
 
 Same deal as yesterday:
 

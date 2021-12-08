@@ -22,15 +22,6 @@ drawings:
 
 # Interacting with the file system
 
---- 
-
-# Good morning, good afternoon, good evening! 👋🏻
-
-Same deal as before (you know it now!):
-
-- Pull down the repo with today's slides and exercises.
-- Have a think about a takeaway or question from yesterday.
-
 ---
 
 By the end of this section, you should be able to:
@@ -104,8 +95,28 @@ The only difference between the stat and lstat methods is that stat follows symb
 The fs.watch method is provided by Node core to tap into file system events. It is however, fairly low level and not the most friendly of APIs.
 
 ---
+
+# Exercise
+
+The labs folder for this section contains two files, index.js and store.json.
+
+Your job is the write the code for the functions to build a file-based store.
+
+Remember to use JSON.stringify() before writing to the disk, and JSON.parse() after reading.
+
+If you're successful, the store.json should contain the books that are added in index.js with appropriate ids.
+
+## Extra time? Some possible extensions:
+
+- Watch an additional directory for any uploaded JSON files that will be parsed and added to your store. Clear the upload when you're done.
+
+- How would you trigger the store persistence? Should this happen on every book submission?
+
+---
 layout: two-cols
 ---
+
+
 
 # Exercise 1
 
