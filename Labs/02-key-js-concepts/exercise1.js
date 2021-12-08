@@ -1,5 +1,9 @@
 "use strict";
-
+function prefixer(greeting) {
+        return function(name) {
+                return greeting + " " + name
+        }
+}
 const sayHiTo = prefixer("Hello ");
 const sayByeTo = prefixer("Goodbye ");
 console.log(sayHiTo("Kevin")); // prints 'Hello Kevin'
