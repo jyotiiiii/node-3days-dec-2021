@@ -41,6 +41,26 @@ By the end of this section:
 
 ---
 
+# Resources, Resources, Resources
+
+- Representations
+- Identifier
+- Metadata
+- Control Data
+
+---
+
+# Verbs and Nouns
+
+- HTTP verbs
+- Routes
+
+---
+
+# 
+
+---
+
 # What is Express?
 
 A framework intended to overcome some common development challenges.

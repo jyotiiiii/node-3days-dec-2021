@@ -32,6 +32,15 @@ By the end of this section, you should be able to:
 
 ---
 
+# Testing Pyramid/Trophy
+
+<p></p>
+<div>
+<img src="https://testingjavascript.com/static/trophyWithLabels@2x-4d0c19a94d88ac607cc5cbeaa8f8708d.png"  v-click>
+</div>
+
+---
+
 # Assertions
 
 An assertion checks a value for a given condition and throws if that condition is not met.
