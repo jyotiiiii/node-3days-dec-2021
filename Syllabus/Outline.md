@@ -16,5 +16,8 @@
 # Day 3: Refactor API to have a persistent backend
 
 - Node.js and Data
-- Error handling
+- ~Error handling~
+- Interacting with the file system
 - Node.js and Databases
+
+👀
